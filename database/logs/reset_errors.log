@@ -1,0 +1,2 @@
+{"timestamp":"2025-01-23 15:17:32","error":"SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected","trace":"#0 \/var\/www\/html\/database\/reset.php(53): PDO->exec('-- Users table\\r...')\n#1 \/var\/www\/html\/database\/reset.php(117): DatabaseReset->reset()\n#2 {main}"}
+{"timestamp":"2025-01-23 15:19:49","error":"SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected","trace":"#0 \/var\/www\/html\/database\/reset.php(64): PDO->exec('-- Users table\\r...')\n#1 \/var\/www\/html\/database\/reset.php(139): DatabaseReset->reset()\n#2 {main}"}

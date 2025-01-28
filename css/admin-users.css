@@ -1,0 +1,87 @@
+.users-table {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+.users-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.users-table th {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.role-badge.admin {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.role-badge.user {
+    background-color: #3498db;
+    color: white;
+}
+
+.role-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.make-admin {
+    background-color: #e74c3c;
+}
+
+.make-admin:hover {
+    background-color: #c0392b;
+}
+
+.remove-admin {
+    background-color: #95a5a6;
+}
+
+.remove-admin:hover {
+    background-color: #7f8c8d;
+}
+
+.current-user {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+@media (max-width: 1024px) {
+    .users-table {
+        font-size: 14px;
+    }
+    
+    .users-table th,
+    .users-table td {
+        padding: 0.75rem;
+    }
+    
+    .role-button {
+        padding: 0.4rem 0.8rem;
+    }
+} 

@@ -1,0 +1,70 @@
+.bookings-table {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+.bookings-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bookings-table th,
+.bookings-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.bookings-table th {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.status-badge.confirmed {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.status-badge.cancelled {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.status-badge.completed {
+    background-color: #3498db;
+    color: white;
+}
+
+.status-form select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.status-form select:hover {
+    border-color: #bbb;
+}
+
+@media (max-width: 1024px) {
+    .bookings-table {
+        font-size: 14px;
+    }
+    
+    .bookings-table th,
+    .bookings-table td {
+        padding: 0.75rem;
+    }
+} 

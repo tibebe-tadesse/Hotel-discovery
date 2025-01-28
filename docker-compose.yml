@@ -1,0 +1,67 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: hotel-discovery-web:latest
+    container_name: hotel-discovery-web
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_DATABASE=hotel_discovery
+      - MYSQL_USER=hoteluser
+      - MYSQL_PASSWORD=hotelpass
+    networks:
+      - hotel-network
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.0
+    container_name: hotel-discovery-db
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=hotel_discovery
+      - MYSQL_USER=hoteluser
+      - MYSQL_PASSWORD=hotelpass
+      - MYSQL_ROOT_PASSWORD=rootpass
+      - MYSQL_ROOT_HOST=%
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/database.sql
+    networks:
+      - hotel-network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "hoteluser",
+          "--password=hotelpass",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+    name: hotel-discovery-data
+
+networks:
+  hotel-network:
+    name: hotel-discovery-network
+    driver: bridge
