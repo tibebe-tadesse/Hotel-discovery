@@ -21,3 +21,7 @@ A modern hotel booking and management system built with PHP, featuring a respons
 
 - [@tibebe-tadesse](https://github.com/tibebe-tadesse)
 - [@Asmamaw-Abeba](https://github.com/Asmamaw-Abeba)
+
+--[@yosefm17](https://github.com/yosefm17)
+
+-[@yikuraw](https://github.com/yikuraw)
